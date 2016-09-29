@@ -15,6 +15,8 @@
 
 - (id)init
 {
+    self = [super init];
+    
     self.googleDrive = [[GoogleDriveManager alloc] init];
 
     return self;
@@ -35,7 +37,7 @@
     [self.googleDrive create:viewController withTitle:desiredFilename withData:data parentFolder:parentReference completionHandler:^(GTLDriveFile *file, NSError *error)
      {
          if(error == nil){
-             completion(file.title, parentReference, error);
+             completion(file.name, parentReference, error);
          }
          else
          {

@@ -17,6 +17,8 @@
 
 -(id)init
 {
+    self = [super init];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSArray *existingSafes = [userDefaults arrayForKey:@"safes"];
     

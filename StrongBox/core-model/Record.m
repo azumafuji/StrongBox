@@ -15,7 +15,9 @@
 }
 
 -(Record*)init
-{   
+{
+    self = [super init];
+    
     _fields = [[NSMutableDictionary alloc] init];
     
     return self;
@@ -23,6 +25,8 @@
 
 -(Record*)initWithFields:(NSDictionary*)fds
 {
+    self = [super init];
+    
     _fields = [[NSMutableDictionary alloc] init];
               
     for(NSNumber* key in [fds allKeys])

@@ -21,6 +21,8 @@
 
 -(Field*) initNewDbHeaderField:(HeaderFieldType)type
 {
+    self = [super init];
+    
     _data = [[NSData alloc] init];
     _type = type;
     _isHeaderField = YES;
@@ -30,6 +32,8 @@
 
 -(Field*) initNewDbHeaderField:(HeaderFieldType)type withString:(NSString*)string
 {
+    self = [super init];
+    
     _data = [string dataUsingEncoding:NSUTF8StringEncoding];
     _type = type;
     _isHeaderField = YES;
@@ -39,6 +43,8 @@
 
 -(Field*) initNewDbHeaderField:(HeaderFieldType)type withData:(NSData*)data
 {
+    self = [super init];
+    
     _data = data;
     _type = type;
     _isHeaderField = YES;
@@ -50,6 +56,8 @@
 
 -(Field*) initNew:(FieldType)type
 {
+    self = [super init];
+ 
     _data = [[NSData alloc] init];
     _type = type;
     _isHeaderField = NO;

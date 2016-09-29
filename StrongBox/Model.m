@@ -38,6 +38,8 @@
 localStorageProvider:(LocalDeviceStorageProvider*)local
              safes:(SafesCollection*)safes;
 {
+    self = [super init];
+    
     _safe = safe;
     _coreModel = [[CoreModel alloc] initWithSafeDatabase:safe];
     _metadata = metaData;

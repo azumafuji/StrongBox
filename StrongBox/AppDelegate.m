@@ -14,7 +14,7 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import "SafesViewController.h"
 #import "UIAlertView+Blocks.h"
-#import "secrets.h"
+#import "real-secrets.h"
 
 @implementation AppDelegate
 

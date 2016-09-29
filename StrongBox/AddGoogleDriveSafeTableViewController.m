@@ -95,7 +95,7 @@
                 GTLDriveFile *f1 = (GTLDriveFile*)obj1;
                 GTLDriveFile *f2 = (GTLDriveFile*)obj2;
                 
-                return [f1.title compare:f2.title options:NSCaseInsensitiveSearch];
+                return [f1.name compare:f2.name options:NSCaseInsensitiveSearch];
             }];
             
             [_driveFiles addObjectsFromArray:sorted];
@@ -108,7 +108,7 @@
                     GTLDriveFile *f1 = (GTLDriveFile*)obj1;
                     GTLDriveFile *f2 = (GTLDriveFile*)obj2;
                     
-                    return [f1.title compare:f2.title options:NSCaseInsensitiveSearch];
+                    return [f1.name compare:f2.name options:NSCaseInsensitiveSearch];
                 }];
                 
                 [_driveFiles addObjectsFromArray:sorted];
@@ -162,7 +162,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GoogleDriveItemCell" forIndexPath:indexPath];
     
     GTLDriveFile *file = [_driveFiles objectAtIndex:indexPath.row];
-    cell.textLabel.text = file.title;
+    cell.textLabel.text = file.name;
     
     if (self.iconsByUrl == nil) {
         self.iconsByUrl = [[NSMutableDictionary alloc] init];
@@ -211,7 +211,6 @@
 }
 
 - (void)readFile:(GTLDriveFile *)file {
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // TODO: will this work with out a navigation controller
     });
@@ -262,7 +261,7 @@
     }
     else
     {
-        if(file.fileSize.longValue > MAX_SAFE_SIZE)
+        if(file.size.longValue > MAX_SAFE_SIZE)
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Safe is Very Large"
                                                             message:@"Warning: This file may take quite a while to download and open. Are you sure you want to continue?"
@@ -292,7 +291,7 @@
 
 - (IBAction)onSelectThisFolder:(id)sender
 {
-     NSString* parentFolder = self.rootDriveFile ? self.rootDriveFile.identifier : @"root";
+    NSString* parentFolder = self.rootDriveFile ? self.rootDriveFile.identifier : @"root";
     
     [self performSegueWithIdentifier:@"segueSelectedFile" sender:parentFolder];
 }
@@ -322,7 +321,7 @@
         
         vc.safes = self.safes;
         vc.existing = self.existing;
-        vc.fileOrFolderObject = sender;
+        vc.fileOrFolderObject = @[sender, self.rootDriveFile == nil ? @"root" : self.rootDriveFile.identifier];
         vc.safeStorageProvider = self.safeStorageProvider;
     }
 }

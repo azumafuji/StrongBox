@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Google-API-Client.xcscheme</key>
+		<key>GTMOAuth2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleAPIClient.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,35 +54,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>gtm-http-fetcher.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>gtm-oauth2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00B2E10275A0ED96002AAE8538ED63C9</key>
+		<key>01394E8537EE449C9CC3BE7F5271CAF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>01B3A0BD211E0C510BC4F7F149C89C5E</key>
+		<key>1795E48A6FD444CC4707EB9D483B1DB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5126B4AA6D09717492D54A085D490BB5</key>
+		<key>3EC508E2AD93A8B7862551E8450FF1A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5CA6B6EAD3BED5A6CC8478D41BB29C6C</key>
+		<key>7B398BB376797C4E9BF1B2E32C5447BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,27 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>848CE5A3B92106CE3083D766CA50A760</key>
+		<key>B4702FAA76A03B992B6002D5B49F3F99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8EEEB80BA60D17183F685BE225B59170</key>
+		<key>B62DC2BB4296D5D6058AAF946EB95157</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6344627E1EFDD6C9A51E57054714BE4</key>
+		<key>D058B89EB3B3DF45457A2DCD3971AFFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2B93FCDC5A48365F4E48AFB7DE1735B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F7571BCEC9BE2B766A5AEFB580A5784B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

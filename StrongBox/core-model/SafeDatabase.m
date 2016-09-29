@@ -23,6 +23,8 @@
 
 -(SafeDatabase*) initNewWithPassword:(NSString*)masterPassword;
 {
+    self = [super init];
+    
     _dbHeaderFields = [[NSMutableArray alloc] init];
 
     // Version
@@ -59,6 +61,8 @@
                         data:(NSData*)safeData
                        error:(NSError**)ppError
 {
+    self = [super init];
+    
     PasswordSafe3Header header;
     NSUInteger numBlocks;
     

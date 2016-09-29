@@ -13,7 +13,6 @@
 #import "MBProgressHUD.h"
 #import "core-model/Utils.h"
 #import "BSKeyboardControls.h"
-#import "GTLDriveParentReference.h"
 
 @interface AddSafeViewController () <DBRestClientDelegate, UITextFieldDelegate, UIScrollViewDelegate, BSKeyboardControlsDelegate>
 @property (nonatomic, strong) BSKeyboardControls *keyboardControls;
@@ -26,6 +25,8 @@
 
 -(void) viewDidLoad
 {
+    [super viewDidLoad];
+    
     self.textPassword.delegate = self;
     self.textConfirmMasterPassword.delegate = self;
     self.textName.delegate = self;
@@ -254,11 +255,13 @@
     {
         if(safe.storageProvider == kGoogleDrive)
         {
-            GTLDriveFile* file = (GTLDriveFile*)self.fileOrFolderObject;
-            safe.fileName = file.title;
+            NSArray* params = (NSArray*)self.fileOrFolderObject;
+            GTLDriveFile* file = (GTLDriveFile*)[params objectAtIndex:0];
+            safe.fileName = file.name;
             
-            GTLDriveParentReference *parent = [file.parents objectAtIndex:0];
-            safe.fileIdentifier = parent.identifier;
+            NSString *identifier = (GTLDriveFile*)[params objectAtIndex:1];
+            
+            safe.fileIdentifier = identifier;
         }
         else
         {
@@ -276,7 +279,17 @@
 - (void)saveNewSafe:(SafeMetaData *)safe data:(NSData *)data
 {
     NSString *desiredFilename = [NSString stringWithFormat:@"%@-strongbox.dat", safe.nickName];
-    NSString *parentFolder = (NSString*)self.fileOrFolderObject;
+    
+    
+    NSString *parentFolder;
+    
+    if(safe.storageProvider == kGoogleDrive) {
+        NSArray* params = (NSArray*)self.fileOrFolderObject;
+        parentFolder = (NSString*)[params objectAtIndex:0];
+    }
+    else {
+        parentFolder = (NSString*)self.fileOrFolderObject;
+    }
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     

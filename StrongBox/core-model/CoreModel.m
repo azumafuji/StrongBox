@@ -20,12 +20,16 @@
 @implementation CoreModel
 
 -(id) initNewWithPassword:(NSString*)password{
+    self = [super init];
+    
     _safe = [[SafeDatabase alloc] initNewWithPassword:password];
 
     return self;
 }
 
 -(id) initExistingWithDataAndPassword:(NSData*)data password:(NSString*)password error:(NSError**)ppError{
+    self = [super init];
+    
     _safe = [[SafeDatabase alloc] initExistingWithData:password data:data error:ppError];
 
     return self;
@@ -33,6 +37,8 @@
 
 -(id) initWithSafeDatabase:(SafeDatabase*)safe
 {
+    self = [super init];
+    
     _safe = safe;
     
     return self;

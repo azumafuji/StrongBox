@@ -4,7 +4,10 @@
 # use_frameworks!
 
 target 'StrongBox' do
-   pod 'Google-API-Client/Drive'
+   source 'https://github.com/CocoaPods/Specs.git'
+   platform :ios, '7.0'
+   pod 'GoogleAPIClient/Drive', '~> 1.0'
+   pod 'GTMOAuth2'
    pod 'MBProgressHUD'
    pod 'BSKeyboardControls'
    pod 'JNKeychain'
